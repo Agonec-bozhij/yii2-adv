@@ -1,18 +1,17 @@
 <?php
 
 use yii\db\Migration;
-use yii\db\mysql\Schema;
 
-class m170205_200316_change_categories_cat_url_string extends Migration
+class m170219_170309_update_goods_cid extends Migration
 {
     public function up()
     {
-        $this->alterColumn('market_categories', 'cat_url', Schema::TYPE_STRING);
+        $this->renameColumn('market_goods', 'cat_id', 'good_cid');
     }
 
     public function down()
     {
-        echo "m170205_200316_change_categories_cat_url_string cannot be reverted.\n";
+        echo "m170219_170309_update_goods_cid cannot be reverted.\n";
 
         return false;
     }
