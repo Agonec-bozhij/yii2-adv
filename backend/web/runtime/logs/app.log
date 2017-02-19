@@ -1,0 +1,135 @@
+2017-02-12 22:08:50 [127.0.0.1][2][s4p7d09sv3a14db70huvf2c537][error][yii\base\ViewNotFoundException] exception 'yii\base\ViewNotFoundException' with message 'The view file does not exist: D:\OpenServer\domains\yii2-adv\backend\web\views\site\index.php' in D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\View.php:229
+Stack trace:
+#0 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\View.php(152): yii\base\View->renderFile('D:\\OpenServer\\d...', Array, Object(backend\controllers\SiteController))
+#1 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\SiteController))
+#2 D:\OpenServer\domains\yii2-adv\backend\controllers\SiteController.php(63): yii\base\Controller->render('index')
+#3 [internal function]: backend\controllers\SiteController->actionIndex()
+#4 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('', Array)
+#7 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('', Array)
+#8 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\OpenServer\domains\yii2-adv\backend\web\index.php(24): yii\base\Application->run()
+#10 {main}
+2017-02-12 22:08:50 [127.0.0.1][2][s4p7d09sv3a14db70huvf2c537][info][application] $_COOKIE = [
+    '_csrf-frontend' => 'a7a18ce56945c18d52e9bf398540717a9f3e68b48eb107ea56792abe5a0a73cba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"CR18YIl7U-jLaF012c_p2ZTcB9yrxRaw\";}'
+    '_csrf-backend' => 'b9b94a5f5a66f6f48dfe00d01a2fdc14fa671638b856665ce6006b5d2f5ba25ca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"QD8GXtsBURuiiNyLZpgrGOkLLRg5G7a8\";}'
+    'advanced-frontend' => 'pc6d7loh3stpgdq4oa3m2mds81'
+    'advanced-backend' => 's4p7d09sv3a14db70huvf2c537'
+    '_identity-backend' => '689b1188d881dd7c87605bd2986a255cdff7e8d217d5170f450d743714d2f4a9a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"4OlqfUUxXZ61wOINMQBik8jzS13CtTww\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/backend/web/index.php'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'yii2-adv'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf-frontend=a7a18ce56945c18d52e9bf398540717a9f3e68b48eb107ea56792abe5a0a73cba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22CR18YIl7U-jLaF012c_p2ZTcB9yrxRaw%22%3B%7D; _csrf-backend=b9b94a5f5a66f6f48dfe00d01a2fdc14fa671638b856665ce6006b5d2f5ba25ca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22QD8GXtsBURuiiNyLZpgrGOkLLRg5G7a8%22%3B%7D; advanced-frontend=pc6d7loh3stpgdq4oa3m2mds81; advanced-backend=s4p7d09sv3a14db70huvf2c537; _identity-backend=689b1188d881dd7c87605bd2986a255cdff7e8d217d5170f450d743714d2f4a9a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%224OlqfUUxXZ61wOINMQBik8jzS13CtTww%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'd:\\openserver\\modules\\php\\PHP-5.6\\ext;d:\\openserver\\modules\\php\\PHP-5.6\\pear;d:\\openserver\\modules\\php\\PHP-5.6\\pear\\bin;d:\\openserver\\modules\\php\\PHP-5.6;d:\\openserver\\modules\\imagemagick;d:\\openserver\\modules\\wget\\bin;d:\\openserver\\modules\\git;d:\\openserver\\modules\\git\\bin;d:\\openserver\\modules\\git\\mingw\\bin;d:\\openserver\\modules\\git\\cmd;d:\\openserver\\modules\\database\\MySQL-5.5\\bin;d:\\openserver\\modules\\http\\Apache-2.4\\bin;d:\\openserver\\modules\\http\\Apache-2.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;D:\\OpenServer\\modules\\nodejs'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Win32)'
+    'SERVER_NAME' => 'yii2-adv'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/OpenServer/domains/yii2-adv'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/OpenServer/domains/yii2-adv'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'D:/OpenServer/domains/yii2-adv/backend/web/index.php'
+    'REMOTE_PORT' => '51795'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/backend/web/'
+    'SCRIPT_NAME' => '/backend/web/index.php'
+    'PHP_SELF' => '/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486926530.859
+    'REQUEST_TIME' => 1486926530
+    'argv' => []
+    'argc' => 0
+]
+2017-02-12 22:18:37 [127.0.0.1][2][s4p7d09sv3a14db70huvf2c537][error][yii\base\ViewNotFoundException] exception 'yii\base\ViewNotFoundException' with message 'The view file does not exist: D:\OpenServer\domains\yii2-adv\backend\web\views\site\index.php' in D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\View.php:229
+Stack trace:
+#0 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\View.php(152): yii\base\View->renderFile('D:\\OpenServer\\d...', Array, Object(backend\controllers\SiteController))
+#1 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\SiteController))
+#2 D:\OpenServer\domains\yii2-adv\backend\controllers\SiteController.php(63): yii\base\Controller->render('index')
+#3 [internal function]: backend\controllers\SiteController->actionIndex()
+#4 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('', Array)
+#7 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('', Array)
+#8 D:\OpenServer\domains\yii2-adv\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\OpenServer\domains\yii2-adv\backend\web\index.php(26): yii\base\Application->run()
+#10 {main}
+2017-02-12 22:18:37 [127.0.0.1][2][s4p7d09sv3a14db70huvf2c537][info][application] $_COOKIE = [
+    '_csrf-frontend' => 'a7a18ce56945c18d52e9bf398540717a9f3e68b48eb107ea56792abe5a0a73cba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"CR18YIl7U-jLaF012c_p2ZTcB9yrxRaw\";}'
+    '_csrf-backend' => 'b9b94a5f5a66f6f48dfe00d01a2fdc14fa671638b856665ce6006b5d2f5ba25ca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"QD8GXtsBURuiiNyLZpgrGOkLLRg5G7a8\";}'
+    'advanced-frontend' => 'pc6d7loh3stpgdq4oa3m2mds81'
+    'advanced-backend' => 's4p7d09sv3a14db70huvf2c537'
+    '_identity-backend' => '689b1188d881dd7c87605bd2986a255cdff7e8d217d5170f450d743714d2f4a9a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"4OlqfUUxXZ61wOINMQBik8jzS13CtTww\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/backend/web/index.php'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'yii2-adv'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://yii2-adv/backend/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf-frontend=a7a18ce56945c18d52e9bf398540717a9f3e68b48eb107ea56792abe5a0a73cba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22CR18YIl7U-jLaF012c_p2ZTcB9yrxRaw%22%3B%7D; _csrf-backend=b9b94a5f5a66f6f48dfe00d01a2fdc14fa671638b856665ce6006b5d2f5ba25ca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22QD8GXtsBURuiiNyLZpgrGOkLLRg5G7a8%22%3B%7D; advanced-frontend=pc6d7loh3stpgdq4oa3m2mds81; advanced-backend=s4p7d09sv3a14db70huvf2c537; _identity-backend=689b1188d881dd7c87605bd2986a255cdff7e8d217d5170f450d743714d2f4a9a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%224OlqfUUxXZ61wOINMQBik8jzS13CtTww%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'd:\\openserver\\modules\\php\\PHP-5.6\\ext;d:\\openserver\\modules\\php\\PHP-5.6\\pear;d:\\openserver\\modules\\php\\PHP-5.6\\pear\\bin;d:\\openserver\\modules\\php\\PHP-5.6;d:\\openserver\\modules\\imagemagick;d:\\openserver\\modules\\wget\\bin;d:\\openserver\\modules\\git;d:\\openserver\\modules\\git\\bin;d:\\openserver\\modules\\git\\mingw\\bin;d:\\openserver\\modules\\git\\cmd;d:\\openserver\\modules\\database\\MySQL-5.5\\bin;d:\\openserver\\modules\\http\\Apache-2.4\\bin;d:\\openserver\\modules\\http\\Apache-2.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;D:\\OpenServer\\modules\\nodejs'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Win32)'
+    'SERVER_NAME' => 'yii2-adv'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/OpenServer/domains/yii2-adv'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/OpenServer/domains/yii2-adv'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'D:/OpenServer/domains/yii2-adv/backend/web/index.php'
+    'REMOTE_PORT' => '52519'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/backend/web/'
+    'SCRIPT_NAME' => '/backend/web/index.php'
+    'PHP_SELF' => '/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1486927117.559
+    'REQUEST_TIME' => 1486927117
+    'argv' => []
+    'argc' => 0
+]
