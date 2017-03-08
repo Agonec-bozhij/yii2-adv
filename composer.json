@@ -17,7 +17,8 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
-        "yiisoft/yii2-swiftmailer": "~2.0.0"
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "rrhyne/yii2-images": "1.0.4.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -38,5 +39,54 @@
     },
     "scripts": {
         "post-install-cmd": "php init --env=Development --overwrite=n"
-    }
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "rrhyne/yii2-images",
+                "version": "1.0.4.1",
+                "description": "yii2 images module for storing images",
+                "keywords": [
+                    "yii2",
+                    "images",
+                    "store",
+                    "images store",
+                    "yii2-images",
+                    "Costa Rico"
+                ],
+                "type": "yii2-extension",
+                "license": "BSD-3-Clause",
+                "authors": [
+                    {
+                        "name": "Rob Rhyne",
+                        "email": "rob.rhyne@gmail.com"
+                    }
+                ],
+                "minimum-stability": "dev",
+                "require": {
+                    "yiisoft/yii2": "*",
+                    "abeautifulsite/simpleimage": "2.7"
+                },
+                "require-dev": {
+                    "yiisoft/yii2-codeception": "*",
+                    "codeception/specify": "*",
+                    "codeception/verify": "*",
+                    "mikey179/vfsStream": "1.3.*@dev"
+                },
+                "suggest": {
+                    "ext-imagick": ""
+                },
+                "autoload": {
+                    "psr-4": {
+                        "rico\\yii2images\\": ""
+                    }
+                },
+                "dist": {
+                    "url": "vagrant/yii2-images-master.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ]
 }
