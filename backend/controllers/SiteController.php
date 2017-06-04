@@ -2,43 +2,69 @@
 namespace backend\controllers;
 
 use Yii;
-use yii\web\Controller;
+
+use yii\filters\ContentNegotiator;
+use yii\filters\Cors;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use yii\rest\Controller;
+use yii\web\Response;
 
 /**
  * Site controller
  */
 class SiteController extends Controller
 {
+    public $enableCsrfValidation = false;
+
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
+        $behaviors = parent::behaviors();
+
+        $behaviors['access'] = [
+            'class' => AccessControl::className(),
+            'rules' => [
+                [
+                    'actions' => ['login', 'error'],
+                    'allow' => true,
                 ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
+                [
+                    'actions' => ['logout', 'index'],
+                    'allow' => true,
+                    'roles' => ['@'],
                 ],
             ],
         ];
+
+        $behaviors['corsFilter'] = [
+            'class' => Cors::className(),
+            'cors' => [
+//                'Access-Control-Allow-Origin' => ['*'],
+                'Origin' => ['*'],
+                'Access-Control-Request-Methods' => ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT'],
+                'Access-Control-Request-Headers' => ['*'],
+                'Access-Control-Allow-Credentials' => true,
+            ]
+        ];
+
+        $behaviors['contentNegotiator'] = [
+            'class' => ContentNegotiator::className(),
+            'formats' => [
+                'application/json' => Response::FORMAT_JSON,
+            ],
+        ];
+
+        $behaviors['verbs'] = [
+            'class' => VerbFilter::className(),
+            'actions' => [
+                '*' => ['post', 'options', 'login']
+            ],
+        ];
+        return $behaviors;
     }
 
     /**
@@ -70,17 +96,18 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+//        if (!Yii::$app->user->isGuest) {
+//            return $this->goHome();
+//        }
+        if (Yii::$app->request->isOptions) {
+            return 'aaa';
         }
-
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        $model->load(Yii::$app->request->bodyParams, '');
+        if ($token = $model->auth()) {
+            return $token;
         } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
+            return $model;
         }
     }
 
@@ -94,5 +121,10 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public static function allowedDomains()
+    {
+        return ['*'];
     }
 }

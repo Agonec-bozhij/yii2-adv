@@ -16,13 +16,19 @@ return [
     'modules' => [],
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-backend',
-            'baseUrl' => '/admin'
+//            'csrfParam' => '_csrf-backend',
+            'enableCookieValidation' => false,
+            'enableCsrfValidation' => false,
+            'baseUrl' => '/admin',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
         'user' => [
             'identityClass' => 'common\models\User',
+            'enableSession' => false,
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+//            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
@@ -45,6 +51,8 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
+                'auth' => 'site/login',
+                'OPTIONS check' => 'user/check',
                 'features/<id>' => 'features/features',
                 '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
 

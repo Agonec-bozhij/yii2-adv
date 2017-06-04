@@ -4,17 +4,48 @@ namespace backend\controllers;
 
 use backend\models\Categories;
 use backend\models\Goods;
-use yii\web\Controller;
+use yii\filters\auth\HttpBasicAuth;
+use yii\filters\auth\HttpBearerAuth;
+use yii\rest\Controller;
 
 class GoodsController extends Controller
 {
-    public static function tableName()
+    public $modelClass = 'backend\models\Goods';
+
+    public function behaviors()
     {
-        return 'market_goods';
+        $behaviors = parent::behaviors();
+
+//        $behaviors['authenticator']['only'] = ['create', 'update', 'delete'];
+//        $behaviors['authenticator']['authMethods'] = [
+//            HttpBasicAuth::className(),
+//            HttpBearerAuth::className(),
+//        ];
+
+//        $behaviors['access'] = [
+//            'class' => AccessControl::className(),
+//            'only' => ['create', 'update', 'delete'],
+//            'rules' => [
+//                [
+//                    'allow' => true,
+//                    'roles' => ['@'],
+//                ],
+//            ],
+//        ];
+
+        return $behaviors;
     }
+
+//    public static function tableName()
+//    {
+//        return 'market_goods';
+//    }
 
     public function actionIndex()
     {
+        $goods = Goods::find()->all();
+        return $goods;
+
         $categories = Categories::find()->all();
         $left_sidebar = $this->renderPartial('left_sidebar', [
             'categories' => $categories
